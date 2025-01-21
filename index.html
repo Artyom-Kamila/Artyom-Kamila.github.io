@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на свадьбу</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> <!-- Подключение шрифта -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('4.jpg'); /* Замените на путь к вашему изображению */
+            background-image: url('4.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Фиксированный фон */
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
             color: #2c2c2c;
-            scroll-behavior: smooth; /* Плавная прокрутка */
+            scroll-behavior: smooth;
+            text-align: center; /* Центрирование всего текста */
         }
+
         nav {
             background: rgba(50, 50, 50, 0.8);
             padding: 15px;
@@ -26,88 +28,116 @@
             z-index: 1000;
             transition: background 0.3s;
         }
+
         nav:hover {
             background: rgba(50, 50, 50, 1);
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Позволяет элементам перемещаться на следующую строку */
         }
+
         nav li {
-            margin: 0 20px;
+            margin: 0 10px; /* Уменьшение отступов для мобильных */
         }
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #FFD700; /* Цвет при наведении */
+            color: #FFD700;
         }
+
         section {
-            background: rgba(255, 255, 255, 0,001);
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             animation: slideIn 0.5s;
         }
+
         @keyframes slideIn {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        h1, h2 {
+            color: #e63946; /* Красный цвет для заголовков */
+            text-align: center; /* Центрирование заголовков */
+        }
+
         h1 {
-            font-family: 'Dancing Script', cursive; /* Рукописный шрифт для заголовка */
-            color: #e63946;
+            font-family: 'Dancing Script', cursive;
             font-size: 3em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            text-align: center;
         }
+
         h2 {
-            font-family: 'Dancing Script', cursive; /* Рукописный шрифт для имен */
-            color: #777;
+            font-family: 'Dancing Script', cursive;
             font-size: 2em;
             margin-top: 20px;
-            text-align: center; /* Центрирование имен */
         }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border 0.3s;
+
+        ul {
+            text-align: left; /* Выровнять текст списка по левому краю */
+            padding-left: 20px; /* Добавить отступ для эстетики */
         }
-        input:focus, select:focus {
-            border: 1px solid #e63946; /* Цвет рамки при фокусе */
-            outline: none; /* Убираем стандартный контур */
-        }
-        button {
-            background: #e63946;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-        }
-        button:hover {
-            background: #d62839;
-            transform: scale(1.05); /* Увеличение кнопки при наведении */
-        }
-        /* Стили для цветных пятен */
+
         .color-swatch {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin: 0 5px;
+            display: inline-block; /* Отображение в строку */
+            width: 50px; /* Ширина цветового образца */
+            height: 50px; /* Высота цветового образца */
+            margin: 5px; /* Отступ между образцами */
+            border-radius: 5px; /* Скругленные углы */
+            border: 2px solid #ffffff; /* Белая рамка для выделения */
+        }
+
+        /* Медиазапросы для адаптации */
+        @media (max-width: 768px) {
+            nav li {
+                margin: 0 5px; /* Уменьшение отступов для мобильных */
+            }
+            h1 {
+                font-size: 2.5em; /* Уменьшение размеров заголовка на мобильных */
+            }
+            h2 {
+                font-size: 1.5em; /* Уменьшение размеров подзаголовков на мобильных */
+            }
+            section {
+                padding: 15px; /* Уменьшение отступов внутри секции */
+                margin: 10px; /* Уменьшение отступов вокруг секции */
+            }
+            nav {
+                padding: 10px; /* Уменьшение отступов в навигации */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 5px; /* Уменьшение отступов для маленьких экранов */
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            section {
+                padding: 10px;
+                margin: 5px; /* Уменьшение отступов вокруг секции */
+            }
         }
     </style>
 </head>
