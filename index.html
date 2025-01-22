@@ -9,41 +9,72 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            overflow-y: scroll; /* Вертикальная прокрутка */
+            scroll-behavior: smooth; /* Плавная прокрутка */
+            height: 100vh; /* Высота видимой части окна */
         }
 
         .gallery {
             display: flex;
             flex-direction: column;
+            align-items: center; /* Центрируем содержимое по горизонтали */
         }
 
         .gallery img {
-            width: 100%; /* заполняет всю ширину */
-            height: 100vh; /* высота на весь экран */
-            object-fit: contain; /* сохраняем пропорции */
-            display: block; /* убираем пробелы под изображениями */
+            max-width: 100%; /* Максимальная ширина картинки */
+            max-height: calc(100vh - 60px);
+            object-fit: contain; /* Сохранение пропорций изображения */
+            display: block;
+            margin-bottom: 5px; /* Уменьшаем отступ между изображениями */
+            position: relative; /* Для позиционирования кнопки внутри картинки */
+        }
+
+        .button-container {
+            position: absolute; /* Абсолютное позиционирование */
+            bottom: 315px; /* Подъем кнопки вверх, измените это значение, чтобы поднять кнопку еще выше */
+            left: 50%; /* Центрируем по горизонтали */
+            transform: translateX(-50%); /* Смещение для точного центрирования */
+            margin: 0; /* Убираем отступы */
+        }
+
+        .button {
+            background-color: rgba(10,255,255,0); /* Цвет кнопки */
+            color: rgba(10,255,255,0); /* Цвет текста */
+            border: none;
+            padding: 5px 215px; /* Уменьшаем отступы для кнопки */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 35px; /* Уменьшаем размер шрифта */
+            cursor: pointer;
+            border-radius: 10px; /* Радиус скругления кнопки */
         }
 
         .google-form {
-            width: 100%; /* ширина на всю ширину */
-            height: 2000px; /* Установите высоту формы по необходимости */
-            border: none; /* убираем рамки */
-            overflow: hidden; /* убираем прокрутку */
+            width: 100%;
+            height: 2000px; /* Фиксированная высота для формы */
+            border: none; 
+            margin: 10px 0; /* Убираем отступы для формы */
         }
     </style>
 </head>
 <body>
 
-    <div class="gallery">
-        <img src="1.jpg" alt="Изображение 1">
-        <img src="2.jpg" alt="Изображение 2">
-        <img src="3.jpg" alt="Изображение 3">
-        <img src="4.jpg" alt="Изображение 4">
+<div class="gallery">
+    <img src="1.jpg" alt="Изображение 1">
+    <img src="2.jpg" alt="Изображение 2">
+    <img src="3.jpg" alt="Изображение 3">
+    <img src="4.jpg" alt="Изображение 4">
+    <div style="position: relative;">
         <img src="5.jpg" alt="Изображение 5">
-        <img src="6.jpg" alt="Изображение 6">
+        <div class="button-container">
+            <a href="https://vk.com/galinaprazdnik" class="button">Перейти на сайт</a>
+        </div>
     </div>
+    <img src="6.jpg" alt="Изображение 6">
+</div>
 
-    <!-- Встраиваем Google Форму -->
-    <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJlupzOk50t8gE_wEByPXb2ru8UTXP70tdD8-qJCCNuVbP4A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+<iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJlupzOk50t8gE_wEByPXb2ru8UTXP70tdD8-qJCCNuVbP4A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
 
 </body>
 </html>
