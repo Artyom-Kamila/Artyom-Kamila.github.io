@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll; /* вертикальная прокрутка */
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery img {
+            width: 100%; /* заполняет всю ширину */
+            height: 100vh; /* высота на весь экран */
+            object-fit: contain; /* сохраняем пропорции */
+            display: block; /* убираем пробелы под изображениями */
+        }
+
+        .google-form {
+            width: 100%; /* ширина на всю ширину */
+            height: 1615px; /* высота устанавливается по вашей форме */
+            border: none; /* убираем рамки */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <img src="images/1.jpg" alt="Изображение 1">
+        <img src="images/2.jpg" alt="Изображение 2">
+        <img src="images/3.jpg" alt="Изображение 3">
+        <img src="images/4.jpg" alt="Изображение 4">
+        <img src="images/5.jpg" alt="Изображение 5">
+        <img src="images/6.jpg" alt="Изображение 6">
+    </div>
+
+    <!-- Встраиваем Google Форму -->
+    <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJlupzOk50t8gE_wEByPXb2ru8UTXP70tdD8-qJCCNuVbP4A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+
+</body>
+</html>
