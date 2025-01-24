@@ -30,28 +30,57 @@
 
         .button-container {
             position: absolute; /* Абсолютное позиционирование для контейнера кнопки */
-            bottom: calc(5.5%); /* Положение кнопки на 35% выше нижнего края изображения */
-            left: 50%; /* Центрируем по горизонтали */
+            bottom: 0.8%; /* Положение кнопки на 35% выше нижнего края изображения */
+            left: 54.15%; /* Центрируем по горизонтали */
             transform: translateX(-50%); /* Смещение влево на половину ширины кнопки */
-            width: 90%; /* Ширина кнопки совпадает с шириной изображения */
-			height: 23%;
+            width: 95.7%; /* Ширина кнопки совпадает с шириной изображения */
+			height: 28.65%;
         }
 
         .button {
-            background-color: rgba(255,255,255,0); /* Цвет кнопки */
+            background-color: rgba(255,255,255,0); /* Основной серый цвет */
             color: rgba(255,255,255,0); /* Цвет текста */
             border: none;
-            padding: 10px; /* Вертикальные отступы */
+            padding: 0px; /* Вертикальные отступы */
             text-align: center;
             text-decoration: none;
             display: inline-block;
             cursor: pointer;
+			outline: none;
+			animation: shine 1.5s infinite; /* Запуск анимации */
             border-radius: 15px; /* Радиус скругления кнопки */
-            font-size: 15px; /* Размер шрифта */
+            font-size: 20px; /* Размер шрифта */
             width: 100%; /* Ширина кнопки совпадает с шириной контейнера */
-			height: 23%;
+			height: 28.65%;
+			transition: background-color 0.3s ease; /* Плавный переход цвета */
+			overflow: hidden; /* Обрезаем содержимое */
         }
 		
+		.button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 98%;
+            height: 28.65%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35), rgba(0, 0, 0, 0.35));
+            background-size: 400% 400%; /* Размер градиента для анимации */
+            animation: gradient-animation 3.5s ease infinite; /* Изменение длительности анимации */
+            z-index: 1; /* Чтобы градиент находился под текстом */
+        }
+		
+		@keyframes gradient-animation {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
 		/* Стиль для состояния кнопки при нажатии */
 		
 		.button:active {
